@@ -1,0 +1,18 @@
+{
+  "name": "venus-personal-site",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "gh-pages -d dist --cname www.venus.org.cn"
+  },
+  "dependencies": {
+    "astro": "^5.0.4"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
+  }
+}

@@ -1,0 +1,111 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import { SITE_TITLE } from '../consts'
+---
+
+<BaseLayout title=`About | ${SITE_TITLE}` description="About Venus Peng Lorem Ipsum">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Venus Peng at work with a colleague"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						璃月七星之一，玉衡星。对“帝君一言而决的璃月”颇有微词——但实际上，神挺欣赏她这样的人。
+					</p>
+					<p>
+						岩王帝君为璃月港带来繁荣昌盛，他的治世威名化作演义传记为人津津乐道。然而，身为离神最近的人之一，刻晴似乎是最缺乏敬畏心的那个。璃月七星随时关注着港内的大小事情，岩王帝君每年却只降临一次。千年历史已经证明追随帝君的脚步是正确之举，但刻晴始终认为，生而为“人”就该有“人”的骄傲，“人”的想法同样该被重视。
+					</p>
+					<p>
+						因此，她经常发表与帝君不同的意见，并一马当先地将其付诸实践。如此激进的做法确实取得了不少杰出成果，但也引来了诸多岩王帝君虔诚信徒的反对声。这种反对在刻晴看来，无非是偷懒的借口——习惯于活在神明庇护之下，永不会主动思考人类的前景。可总有一个人要走在时代最前沿，亲手开创新的道路。玉衡星，自然当仁不让。
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Personality</h2>
+				<div class="content">
+					<p>“昨天的经历都将成为明天的力量。”这是刻晴的人生信条之一。仅是待在玉京台，就只能看到一成不变的风景。想要拥有雷霆般的判断力与执行力，便需要大量经验。身为“璃月七星”，刻晴是个不折不扣的行动派。如果一件事在她看来是有价值、有必要的，那她一定会亲力亲为。比如，她曾亲自踏遍璃月全境，将地势地貌牢记于心，以便日后能够最大限度地利用每一寸土地。也曾为了拟定工人待遇改善计划而亲赴现场，体验了足足两个月工人生活。</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>刻晴的剑法名为云来剑法，其中最为迅捷的一招“天街巡游”，号称可将诸星斩落。通过攻击投掷出的雷楔能让刻晴进行短距离的位移。</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
